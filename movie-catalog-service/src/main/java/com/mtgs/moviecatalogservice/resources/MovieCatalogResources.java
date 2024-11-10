@@ -4,7 +4,9 @@ import com.mtgs.moviecatalogservice.model.CatalogItem;
 import com.mtgs.moviecatalogservice.model.Movie;
 import com.mtgs.moviecatalogservice.model.Rating;
 import com.mtgs.moviecatalogservice.model.UserRating;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +25,8 @@ public class MovieCatalogResources {
     @Autowired
     RestTemplate restTemplate;
 
+    @Autowired
+    private DiscoveryClient discoveryClient;
     @Autowired
     private WebClient.Builder webClientBuilder;
 
